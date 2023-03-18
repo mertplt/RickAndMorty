@@ -8,12 +8,9 @@
 import UIKit
 
 class HorizontalCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var titleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var LocationTitleLabel: UILabel!
+
+    
 
 }
