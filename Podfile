@@ -8,6 +8,10 @@ target 'RickAndMorty' do
   # Pods for RickAndMorty
   pod 'Alamofire'
   pod 'SDWebImage', '~> 5.0'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SVProgressHUD'
+
+
 
 
 

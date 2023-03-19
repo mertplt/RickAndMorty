@@ -7,10 +7,22 @@
 
 import UIKit
 
-class HorizontalCollectionViewCell: UICollectionViewCell {
+protocol LocationCellProtocol{
+    var locationText: String{ get }
+    
+}
+
+class HorizontalCollectionViewCell: UICollectionViewCell,ReuseProtocol,NibProtocol{
     
     @IBOutlet weak var LocationTitleLabel: UILabel!
-
+    
+    @IBOutlet weak var LocationLablel: UILabel!
+    
+    func configure(data: LocationCellProtocol){
+       LocationLablel.text = data.locationText
+       // LocationLablel.text = "mert"
+    }
+    
     
 
 }

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class VerticalCollectionViewCell: UICollectionViewCell {
+class VerticalCollectionViewCell: UICollectionViewCell,ReuseProtocol,NibProtocol {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     
+
     
 
 }
