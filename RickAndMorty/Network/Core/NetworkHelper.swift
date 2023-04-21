@@ -26,7 +26,7 @@ class NetworkHelper{
     let baseURL = "https://rickandmortyapi.com/api/"
     
     func requestUrl(url:String)->String{
-        print(baseURL + url)
+      print(baseURL + url)
 
        return baseURL + url
     }

@@ -12,7 +12,5 @@ target 'RickAndMorty' do
   pod 'SVProgressHUD'
 
 
-
-
-
 end
+ 

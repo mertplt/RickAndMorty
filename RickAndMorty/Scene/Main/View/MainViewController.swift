@@ -34,6 +34,7 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     fileprivate func collectionSetup(){
         HorizontalCV.registerCell(type: HorizontalCollectionViewCell.self)
+        VerticalCV.registerCell(type: VerticalCollectionViewCell.self)
     }
     
     fileprivate func viewModelConfiguration(){
@@ -52,15 +53,21 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
         if(collectionView == HorizontalCV){
             return viewModel.numberOfItems()
         }
-        return 30
+        return viewModel.nubmerOfCharacterItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ 
         let cell = VerticalCV.dequeueReusableCell(withReuseIdentifier: "VerticalCollectionViewCell", for: indexPath) as! VerticalCollectionViewCell
+
+        if let character = viewModel.character{
+            cell.CharacterConfigure(data: character)
+        }
         
         if(collectionView == HorizontalCV){
             let cell2 = HorizontalCV.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
             if let location = viewModel.main?.results?[indexPath.item]{
+              
                 cell2.configure(data: location)
             }
             cell2.layer.cornerRadius = 10
@@ -70,6 +77,20 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
         return cell
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView == HorizontalCV else { return }
+        let location = viewModel.main?.results?[indexPath.item]
+        let locationURL = location?.url ?? ""
+
+        let characterLink = viewModel.generateCharacterLinks(from: locationURL)
+    //   CharacterEndpoint(link: characterLink)
+        
+        
+       // print(characterLink)
+
+
+    }
 
 
 

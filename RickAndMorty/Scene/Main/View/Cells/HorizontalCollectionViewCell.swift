@@ -9,6 +9,7 @@ import UIKit
 
 protocol LocationCellProtocol{
     var locationText: String{ get }
+    var CharacterLinks: [String] { get }
     
 }
 
@@ -20,7 +21,9 @@ class HorizontalCollectionViewCell: UICollectionViewCell,ReuseProtocol,NibProtoc
     
     func configure(data: LocationCellProtocol){
        LocationLablel.text = data.locationText
-       // LocationLablel.text = "mert"
+       // print(data.locationText)
+        
+    
     }
     
     

@@ -29,4 +29,8 @@ struct MainResult:  Identifiable,Codable,LocationCellProtocol {
         name ?? ""
     }
     
+    var CharacterLinks: [String]{
+        residents
+    }
+    
 }
